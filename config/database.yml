@@ -13,6 +13,6 @@ test:
 
 production:
   <<: *default
-  database: website_production
-  username: tristinbaker
+  database: <%= ENV['DATABASE_URL'] %>
+  username: root
   password: <%= ENV['WEBSITE_DATABASE_PASSWORD'] %>
