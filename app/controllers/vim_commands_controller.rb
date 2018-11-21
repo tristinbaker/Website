@@ -1,7 +1,7 @@
 class VimCommandsController < ApplicationController
 
   def index 
-    @commands = VimCommands.all
+    @commands = VimCommand.all
   end
 
 end
