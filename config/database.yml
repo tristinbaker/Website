@@ -15,4 +15,4 @@ production:
   <<: *default
   database: <%= ENV['DATABASE_URL'] %>
   username: root
-  password: <%= ENV['WEBSITE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['WEBSITE_DATABASE_PASSWORD'] %> 
