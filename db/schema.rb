@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_21_211903) do
+ActiveRecord::Schema.define(version: 2018_11_21_221444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_11_21_211903) do
     t.string "description"
     t.integer "weight"
     t.bigint "vim_type_id"
+    t.string "hidden_attributes"
     t.index ["vim_type_id"], name: "index_vim_commands_on_vim_type_id"
   end
 

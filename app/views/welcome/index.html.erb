@@ -2,3 +2,7 @@
 <p>
   The time is <%= Time.now %>
 </p>
+
+<% @vim_commands.each do |command| %>
+  <h6> <%= command %> </h6>
+<% end %>
