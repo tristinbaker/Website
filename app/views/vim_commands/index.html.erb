@@ -1,3 +1,16 @@
-<% @vim_commands.each do |command| %>
-  <h6> <%= command.command %> </h6>
-<% end %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Command</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @vim_commands.each do |command| %>
+      <tr>
+        <td> <%= command.command %> </td>
+        <td> <%= command.description %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
