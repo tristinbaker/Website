@@ -21,7 +21,7 @@
             <% vim_type.vim_commands.sort_by_weight.each do |vim| %>
               <tr>
                 <td class="col-width"><%= vim.command %> </td>
-                <td><%= vim.function %></td>
+                <td><%= vim.description %></td>
                 <td style="display: none;"><%= vim.hidden_attribute %></td>
               </tr>
             <% end %>
