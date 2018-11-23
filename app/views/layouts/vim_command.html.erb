@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= javascript_include_tag 'vim_commands' %>
+    <%= stylesheet_link_tag 'vim_commands' %>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse no-border-radius">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          Image here
+        </div>
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Home", vim_commands_index_path %></li>
+          <li> VIMRC </li>
+          <li> Other Vim Related Uses" </li>
+        </ul>
+      </div>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

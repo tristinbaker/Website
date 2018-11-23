@@ -1,7 +1,7 @@
 class VimCommandsController < ApplicationController
 
   def index 
-    @vim_commands = VimCommand.all
+    @vim_types = VimType.all.exclude_non_commands
   end
 
 end

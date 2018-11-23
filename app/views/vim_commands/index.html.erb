@@ -1,16 +1,34 @@
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Command</th>
-      <th scope="col">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @vim_commands.each do |command| %>
-      <tr>
-        <td> <%= command.command %> </td>
-        <td> <%= command.description %> </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="background">
+  <div class="container-fluid">
+    <h1>
+      Vim Guide
+    </h1>
+    <hr>
+    <h6> Enter functionality you are searching for (saving, quitting, etc.) </h6>
+    <div class="command-table">
+      <input class="form-control" id="myInput" type="text" placeholder="Search Commands...">
+      <hr>
+      <% @vim_types.each do |vim_type| %>
+        <h6> <%= vim_type.name %> </h6>
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th> Command </th>
+              <th> Function </th>
+            </tr>
+          </thead>
+          <tbody id="myTable">
+            <% vim_type.vim_commands.sort_by_weight.each do |vim| %>
+              <tr>
+                <td class="col-width"><%= vim.command %> </td>
+                <td><%= vim.function %></td>
+                <td style="display: none;"><%= vim.hidden_attribute %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+    <h6 class="pull-right"> Please note: This is not a comprehensive guide to using Vim. This page simply aims to ease the transition from using graphical IDEs to Vim. </h6>
+  </div>
+</div>
