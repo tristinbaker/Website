@@ -16,7 +16,7 @@
 }
 
 pre.code {
-  white-space: pre-wrap;
+  white-space: normal;
 }
 pre.code:before {
   counter-reset: listing;
