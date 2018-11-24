@@ -8,9 +8,9 @@
   <div style="border: thin solid black;">
   <pre class="code vimrc">
   <% @vim_types.each do |vim_type| %>
-    <b>------------------------------
-        <%= vim_type.name %>        
-    ------------------------------</b>
+           <b>------------------------------
+               <%= vim_type.name %>        
+           ------------------------------</b>
     <% vim_type.vimrcs.each do |vimrc| %>
 <code><span class="comment">" <%= vimrc.comments %></span></code>
 
