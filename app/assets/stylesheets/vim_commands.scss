@@ -155,3 +155,11 @@ pre.code code::before {
   border-radius: 0px !important;
 }
 
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;               
+  background-color:#caccce;
+  height: 1px;
+}
