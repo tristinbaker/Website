@@ -2,9 +2,10 @@
   <h3> My .vimrc file </h3>
   <h6> How To Use: </h6>
   <span> Click "Copy". This will copy a command that you will then need to run inside your devbox. The .vimrc modification will then be applied the next time you open vim. </span><br>
-  <span> Note: only copy commands in which you understand what is going on. Alternatively, just copy the entire file and paste it to ~/.vimrc.</span><br>
+  <span> Note: only copy commands in which you understand what is going on. Alternatively, just copy the entire file and paste it to ~/.vimrc.</span><hr>
   <!--<span> You can click any of the .vimrc statements to see a gif of each one in action. </span><hr> -->
   <%# link_to 'Add Statement To .vimrc', new_vimrc_path, class: "btn btn-secondary", style: "margin-bottom: 5px;" %>
+  <div style="border: thin solid black;">
   <pre class="code vimrc">
   <% @vim_types.each do |vim_type| %>
     <b>------------------------------
@@ -18,5 +19,6 @@
     <% end %>
   <% end %>
   </pre>
+  </div>
 </div>
 <div id="toast"><div id="img"><%= image_tag("https://goo.gl/MSDStT", alt: "Vim Logo", style: "max-height: 3vh; max-width: 3vw; padding-bottom: 1vh;") %></div><div id="desc">Paste this into your command line.</div></div>
