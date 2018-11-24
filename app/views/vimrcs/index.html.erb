@@ -1,0 +1,22 @@
+<div class="container-fluid background">
+  <h3> My .vimrc file </h3>
+  <h6> How To Use: </h6>
+  <span> Click "Copy". This will copy a command that you will then need to run inside your devbox. The .vimrc modification will then be applied the next time you open vim. </span><br>
+  <span> Note: only copy commands in which you understand what is going on. Alternatively, just copy the entire file and paste it to ~/.vimrc.</span><br>
+  <!--<span> You can click any of the .vimrc statements to see a gif of each one in action. </span><hr> -->
+  <%# link_to 'Add Statement To .vimrc', new_vimrc_path, class: "btn btn-secondary", style: "margin-bottom: 5px;" %>
+  <pre class="code vimrc">
+  <% @vim_types.each do |vim_type| %>
+    <b>------------------------------
+        <%= vim_type.name %>        
+    ------------------------------</b>
+    <% vim_type.vimrcs.each do |vimrc| %>
+<code><span class="comment">" <%= vimrc.comments %></span></code>
+
+<code><span class="statement"><%=link_to "#{vimrc.function}", vim_commands_path %></span></code>     <button onClick="commandCopy(<%=vimrc.id%>)" class="btn btn-info" %>Copy</button>
+<div style="display: none;" id="statement<%=vimrc.id%>"> echo '"<%= vimrc.comments %>\n<%= vimrc.function %>\n' >> ~/.vimrc </div>
+    <% end %>
+  <% end %>
+  </pre>
+</div>
+<div id="toast"><div id="img"><%= <%= image_tag("https://goo.gl/MSDStT", alt: "Vim Logo", style: "max-height: 3vh; max-width: 3vw; padding-bottom: 1vh;") %></div><div id="desc">Paste this into your command line.</div></div>
