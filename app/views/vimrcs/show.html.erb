@@ -1,0 +1,14 @@
+<div class="container-fluid background">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3> <%= @vimrc.function %> </h3>
+      <h5> <%= @vimrc.comments %> </h5>
+      <small>.vimrc Section <%= @vimrc.vim_type.name %> </small><br>
+    </div>
+    <div class="panel-body">
+      <% if @vimrc.icon.present? %>
+        <%= image_tag(S3_BUCKET.object("#{@vimrc.icon}").presigned_url(:get, expires_in: 60 * 60 * 24), alt: "#{@vimrc.icon}", style: "margin: 10px;") %>
+      <% end %>
+    </div>
+  </div>
+</div>

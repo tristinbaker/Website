@@ -1,10 +1,10 @@
 <div class="container-fluid background">
-  <h3> My .vimrc file </h3>
+  <hr>
   <h6> How To Use: </h6>
   <span> Click "Copy". This will copy a command that you will then need to run inside your devbox. The .vimrc modification will then be applied the next time you open vim. </span><br>
-  <span> Note: only copy commands in which you understand what is going on. Alternatively, just copy the entire file and paste it to ~/.vimrc.</span><hr>
-  <!--<span> You can click any of the .vimrc statements to see a gif of each one in action. </span><hr> -->
-  <%# link_to 'Add Statement To .vimrc', new_vimrc_path, class: "btn btn-secondary", style: "margin-bottom: 5px;" %>
+  <span> Note: only copy commands in which you understand what is going on. Alternatively, just copy the entire file and paste it to ~/.vimrc.</span>
+  <span> You can click any of the .vimrc statements to see a gif of each one in action. </span><hr>
+  <%= link_to 'Add Statement To .vimrc', new_vimrc_path, class: "btn btn-secondary", style: "margin-bottom: 5px;" %>
   <div style="border: thin solid black;">
   <pre class="code vimrc">
   <% @vim_types.each do |vim_type| %>
