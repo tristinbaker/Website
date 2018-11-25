@@ -13,7 +13,8 @@
       <%= link_to image_tag(S3_BUCKET.object('vim.png').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Vim Logo", style: "max-height: 30px; max-width: 30px;") + " Vim Guide", vim_commands_path, class: "navbar-brand" %>
       <div class="collapse navbar-collapse">
         <div class="navbar-nav">
-        <%= link_to "Home", vim_commands_path, class: "nav-item nav-link active" %>
+        <%= link_to "Home", welcome_path, class: "nav-item nav-link active" %>
+        <%= link_to "Vim Commands", vimrcs_path, class: "nav-item nav-link" %>
         <%= link_to ".Vimrc Configuration", vimrcs_path, class: "nav-item nav-link" %>
         </div>
       </div>
