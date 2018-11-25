@@ -14,7 +14,7 @@
     <% vim_type.vimrcs.each do |vimrc| %>
 <code><span class="comment">" <%= vimrc.comments %></span></code>
 
-<code><span class="statement"><%=link_to "#{vimrc.function}", vim_commands_path %></span></code>     <button onClick="commandCopy(<%=vimrc.id%>)" class="btn btn-info" %>Copy</button>
+<code><span class="statement"><%=link_to "#{vimrc.function}", vimrc_path(vimrc.id) %></span></code>     <button onClick="commandCopy(<%=vimrc.id%>)" class="btn btn-info" %>Copy</button>
 <div style="display: none;" id="statement<%=vimrc.id%>"> echo '"<%= vimrc.comments %>\n<%= vimrc.function %>\n' >> ~/.vimrc </div>
     <% end %>
   <% end %>
