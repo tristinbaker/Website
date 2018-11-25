@@ -10,11 +10,11 @@
   </head>
   <body>
     <nav class="navbar navbar-dark bg-dark navbar-expand-md">
-      <%= link_to image_tag("https://goo.gl/MSDStT", alt: "Vim Logo", style: "max-height: 30px; max-width: 30px;") + " Vim Guide", vim_commands_path, class: "navbar-brand" %>
+      <%= link_to 'Tristin Baker', welcome_path, class: "nav-brand"%>
       <div class="collapse navbar-collapse">
         <div class="navbar-nav">
         <%= link_to "Home", welcome_path, class: "nav-item nav-link active" %>
-        <%= link_to ".Vimrc Configuration", vimrcs_path, class: "nav-item nav-link" %>
+        <%= link_to "Vim Guide", vim_commands_path, class: "nav-item nav-link" %>
         </div>
       </div>
     </nav>
