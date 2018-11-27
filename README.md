@@ -1,24 +1,13 @@
-# README
+# tristinbaker.com
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Current Projects Hosted
 
-Things you may want to cover:
+* Vim Guide
+  
+  - This is a guide to help people ease into using Vim from an IDE. 
+  
+## Projects I Am Working On
 
-* Ruby version
+* CHIP8 Emulator
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  - This will be an emulator for the CHIP8 processor. It will include a few ROMs for testing.
