@@ -15,11 +15,13 @@
       <%= link_to "Smart Rockets", smart_rockets_path, class: "navbar-brand" %>
       <div class="collapse navbar-collapse">
         <div class="navbar-nav">
-        <%= link_to "Home", root_path, class: "nav-item nav-link active" %>
-        <%= link_to "Projects (under construction)", root_path, class: "nav-item nav-link" %>
+          <%= link_to "Home", root_path, class: "nav-item nav-link active" %>
+          <%= link_to "Projects (under construction)", root_path, class: "nav-item nav-link" %>
         </div>
       </div>
     </nav>
-    <%= yield %>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
   </body>
 </html>
