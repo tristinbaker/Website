@@ -20,7 +20,7 @@ function setup() {
 function draw() {
   background(0);
   population.run();
-  lifeP.html('Generation: ' + count);
+  lifeP.html('Days left: ' + (lifespan - count));
 
   count++;
   if(count == lifespan) {
