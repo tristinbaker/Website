@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.js"></script>
+    <%= javascript_include_tag 'smartrockets' %>
+    <title> Smart Rockets </title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+      <%= link_to "Smart Rockets", smart_rockets_path, class: "navbar-brand" %>
+      <div class="collapse navbar-collapse">
+        <div class="navbar-nav">
+        <%= link_to "Home", root_path, class: "nav-item nav-link active" %>
+        <%= link_to "Projects (under construction)", root_path, class: "nav-item nav-link" %>
+        </div>
+      </div>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

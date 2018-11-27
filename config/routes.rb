@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   resources :vim_commands, only: :index
   resources :vimrcs
+
+  resources :smart_rockets, only: :index
 end
