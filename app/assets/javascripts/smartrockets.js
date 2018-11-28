@@ -24,7 +24,7 @@ function setup() {
 
   population = new Population();
   target = createVector(width/2, 50);
-	distFromObstToTarget = dist(rx, ry + rh, target.x, target.y);
+  distFromObstToTarget = dist(rx, ry + rh, target.x, target.y);
   tableCreate();
 }
 
@@ -38,8 +38,8 @@ function draw() {
     population.evaluate();
     population.selection();
     count = 0;
-		generation++;
-		minDist = 9999;
+    generation++;
+    minDist = 9999;
     insertRow(generation, maxfit.toFixed(2));
   }
 
@@ -113,18 +113,18 @@ function Population() {
         this.matingPool.push(this.rockets[i]);
       }
     }
+  }
 
-    this.selection = function() {
-      var newRockets = [];
-      for(var i = 0; i < this.rockets.length; i++) {
-        var parentA = random(this.matingPool).dna;
-        var parentB = random(this.matingPool).dna;
-        var child = parentA.crossover(parentB);
-        child.mutation();
-        newRockets[i] = new Rocket(child);
-      }
-      this.rockets = newRockets;
+  this.selection = function() {
+    var newRockets = [];
+    for(var i = 0; i < this.rockets.length; i++) {
+      var parentA = random(this.matingPool).dna;
+      var parentB = random(this.matingPool).dna;
+      var child = parentA.crossover(parentB);
+      child.mutation();
+      newRockets[i] = new Rocket(child);
     }
+    this.rockets = newRockets;
   }
 
 
@@ -210,7 +210,7 @@ function Rocket(dna) {
       this.crashed = true;
     }
 
-		if(this.crashed) {
+    if(this.crashed) {
       this.color = color(255, 150);
     }
 
