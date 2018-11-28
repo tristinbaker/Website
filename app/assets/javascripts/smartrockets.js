@@ -4,6 +4,9 @@ var lifeP;
 var count = 0;
 var target;
 var maxforce = 0.2;
+var minDist = 9999;
+var generation = 0;
+var tbl;
 
 var rx = 100;
 var ry = 150;
@@ -12,14 +15,20 @@ var rh = 10;
 
 function setup() {
   createCanvas(400, 300);
-  population = new Population();
+  canvas.parent("body-div");
+  tbl  = document.createElement('table');
   lifeP = createP();
+  lifeP.parent("body-div");
+
+  population = new Population();
   target = createVector(width/2, 50);
+	distFromObstToTarget = dist(rx, ry + rh, target.x, target.y);
+  tableCreate();
 }
 
 function draw() {
   background(0);
-  population.run();
+  maxfit = population.run();
   lifeP.html('Days left: ' + (lifespan - count));
 
   count++;
@@ -27,6 +36,9 @@ function draw() {
     population.evaluate();
     population.selection();
     count = 0;
+		generation++;
+		minDist = 9999;
+    insertRow(generation, maxfit.toFixed(2));
   }
 
   fill(255);
@@ -39,22 +51,23 @@ function Population() {
   this.rockets = [];
   this.popsize = 25;
   this.matingPool = [];
+  this.maxfit = 0;
 
   for(var i = 0; i < this.popsize; i++) {
     this.rockets[i] = new Rocket();
   }
 
   this.evaluate = function() {
-    var maxfit = 0;
+    this.maxfit = 0;
     for(var i = 0; i < this.popsize; i++) {
       this.rockets[i].calcFitness();
-      if(this.rockets[i].fitness > maxfit) {
+      if(this.rockets[i].fitness > this.maxfit) {
         maxfit = this.rockets[i].fitness;
       }
     }
 
     for(var i = 0; i < this.popsize; i++) {
-      this.rockets[i].fitness /= maxfit;
+      this.rockets[i].fitness /= this.maxfit;
     }
 
     this.matingPool = [];
@@ -84,6 +97,10 @@ function Population() {
       this.rockets[i].update();
       this.rockets[i].show();
     }
+    minDist = 9999;
+    this.rockets[firstPlaceRocket].color = color(100, 100, 255, 150);
+    this.rockets[firstPlaceRocket].show();
+    return this.maxfit;
   }
 }
 
@@ -127,6 +144,8 @@ function Rocket(dna) {
   this.acc = createVector();
   this.completed = false;
   this.crashed = false;
+  this.distance = 10000;
+  this.color = color(255, 150);
 
   if (dna) {
     this.dna = dna;
@@ -140,9 +159,9 @@ function Rocket(dna) {
   }
 
   this.calcFitness = function () {
-    var d = dist(this.pos.x, this.pos.y, target.x, target.y);
+    this.calcDistance();
 
-    this.fitness = map(d, 0, width, width, 0);
+    this.fitness = map(this.distance, 0, width, width, 0);
     if(this.completed) {
       this.fitness *= 10;
     } 
@@ -151,9 +170,29 @@ function Rocket(dna) {
     }
   }
 
+  this.calcDistance = function() {
+    if(this.pos.y >= (ry + rh)) {
+      lhs = dist(this.pos.x, this.pos.y, rx, ry + rh);
+      rhs = dist(this.pos.x, this.pos.y, rx + rw, ry + rh);
+      this.distance = distFromObstToTarget + min(lhs, rhs);
+    } else {
+      this.distance = dist(this.pos.x, this.pos.y, target.x, target.y);
+    }
+
+    this.distance = this.distance.toFixed(2);
+  }
+
   this.update = function() {
-    var d = dist(this.pos.x, this.pos.y, target.x, target.y);
-    if(d < 10) {
+
+    this.calcDistance();
+    this.color = color(255, 150);
+
+    if(minDist > this.distance) {
+      minDist = this.distance;
+      firstPlaceRocket = index;
+    }
+
+    if(this.distance < 10) {
       this.completed = true; 
       this.pos = target.copy();
     }
@@ -167,6 +206,10 @@ function Rocket(dna) {
     }
     if(this.pos.y > height || this.pos.y < 0) {
       this.crashed = true;
+    }
+
+		if(this.crashed) {
+      this.color = color(255, 150);
     }
 
     this.applyForce(this.dna.genes[count]);
@@ -189,3 +232,27 @@ function Rocket(dna) {
     pop();
   }
 }
+
+function tableCreate(){
+  tbl.style.width  = '200px';
+  tbl.style.border = '1px solid black';
+  var header = tbl.createTHead();
+  var row = header.insertRow(0);
+  var cell = row.insertCell(0);
+  cell.innerHTML = "Generation"
+  cell = row.insertCell(1);
+  cell.innerHTML = "Most Fit"
+  document.getElementById("body-div").appendChild(tbl);
+}
+
+function insertRow(test, test1) {
+  var tr = tbl.insertRow();
+  var td = tr.insertCell();
+  td.appendChild(document.createTextNode(test));
+  td.style.border = '1px solid grey';
+  td = tr.insertCell();
+  td.appendChild(document.createTextNode(test1));
+  td.style.border = '1px solid grey';
+  document.getElementById("body-div").appendChild(tbl);
+}
+
