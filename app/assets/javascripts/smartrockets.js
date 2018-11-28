@@ -13,6 +13,8 @@ var ry = 150;
 var rw = 200;
 var rh = 10;
 
+var distFromObstToTarget;
+
 function setup() {
   canvas = createCanvas(400, 300);
   canvas.parent("body-div");
@@ -47,6 +49,40 @@ function draw() {
   ellipse(target.x, target.y, 16, 16);
 }
 
+function DNA(genes) {
+  if(genes) {
+    this.genes = genes;
+  } else {
+    this.genes = [];
+    for(var i = 0; i < lifespan; i++) {
+      this.genes[i] = p5.Vector.random2D();
+      this.genes[i].setMag(maxforce);
+    }
+  }
+
+  this.crossover = function(partner) {
+    var newgenes = [];
+    var mid = floor(random(this.genes.length));
+    for(var i = 0; i < this.genes.length; i++) {
+      if(i > mid)  {
+        newgenes[i] = this.genes[i];
+      } else {
+        newgenes[i] = partner.genes[i];
+      }
+    }
+    return new DNA(newgenes);
+  }
+
+  this.mutation = function() {
+    for(var i = 0; i < this.genes.length; i++) {
+      if(random(1) < 0.01) {
+        this.genes[i] = p5.Vector.random2D();
+        this.genes[i].setMag(maxforce);
+      }
+    }
+  }
+}
+
 function Population() {
   this.rockets = [];
   this.popsize = 25;
@@ -62,7 +98,7 @@ function Population() {
     for(var i = 0; i < this.popsize; i++) {
       this.rockets[i].calcFitness();
       if(this.rockets[i].fitness > this.maxfit) {
-        maxfit = this.rockets[i].fitness;
+        this.maxfit = this.rockets[i].fitness;
       }
     }
 
@@ -101,40 +137,6 @@ function Population() {
     this.rockets[firstPlaceRocket].color = color(100, 100, 255, 150);
     this.rockets[firstPlaceRocket].show();
     return this.maxfit;
-  }
-}
-
-function DNA(genes) {
-  if(genes) {
-    this.genes = genes;
-  } else {
-    this.genes = [];
-    for(var i = 0; i < lifespan; i++) {
-      this.genes[i] = p5.Vector.random2D();
-      this.genes[i].setMag(maxforce);
-    }
-  }
-
-  this.crossover = function(partner) {
-    var newgenes = [];
-    var mid = floor(random(this.genes.length));
-    for(var i = 0; i < this.genes.length; i++) {
-      if(i > mid)  {
-        newgenes[i] = this.genes[i];
-      } else {
-        newgenes[i] = partner.genes[i];
-      }
-    }
-    return new DNA(newgenes);
-  }
-
-  this.mutation = function() {
-    for(var i = 0; i < this.genes.length; i++) {
-      if(random(1) < 0.01) {
-        this.genes[i] = p5.Vector.random2D();
-        this.genes[i].setMag(maxforce);
-      }
-    }
   }
 }
 
@@ -224,7 +226,7 @@ function Rocket(dna) {
   this.show = function() {
     push();
     noStroke();
-    fill(255, 150);
+    fill(this.color);
     translate(this.pos.x, this.pos.y);
     rotate(this.vel.heading());
     rectMode(CENTER);
