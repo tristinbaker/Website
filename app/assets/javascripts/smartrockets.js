@@ -14,7 +14,7 @@ var rw = 200;
 var rh = 10;
 
 function setup() {
-  createCanvas(400, 300);
+  canvas = createCanvas(400, 300);
   canvas.parent("body-div");
   tbl  = document.createElement('table');
   lifeP = createP();
