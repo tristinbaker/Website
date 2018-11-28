@@ -94,7 +94,7 @@ function Population() {
 
   this.run = function() {
     for(var i = 0; i < this.popsize; i++) {
-      this.rockets[i].update();
+      this.rockets[i].update(i);
       this.rockets[i].show();
     }
     minDist = 9999;
@@ -182,7 +182,7 @@ function Rocket(dna) {
     this.distance = this.distance.toFixed(2);
   }
 
-  this.update = function() {
+  this.update = function(index) {
 
     this.calcDistance();
     this.color = color(255, 150);
