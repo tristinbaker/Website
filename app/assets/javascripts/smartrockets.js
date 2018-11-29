@@ -19,8 +19,15 @@ function setup() {
   canvas = createCanvas(400, 300);
   canvas.parent("body-div");
   tbl  = document.createElement('table');
+
   lifeP = createP();
   lifeP.parent("body-div");
+
+  lifeSliderP = createP();
+  lifeSliderP.parent("body-div");
+
+  lifeSlider = createSlider(50, 800, 400, 10);
+  lifeSlider.parent("body-div");
 
   population = new Population();
   target = createVector(width/2, 50);
@@ -32,6 +39,8 @@ function draw() {
   background(0);
   maxfit = population.run();
   lifeP.html('Days left: ' + (lifespan - count));
+  templifespan = lifeSlider.value();
+  lifeSliderP.html("Life Span For Next Generation: " + templifespan);
 
   count++;
   if(count == lifespan) {
@@ -41,6 +50,7 @@ function draw() {
     generation++;
     minDist = 9999;
     insertRow(generation, maxfit.toFixed(2));
+    life = templifespan;
   }
 
   fill(255);
@@ -134,7 +144,7 @@ function Population() {
       this.rockets[i].show();
     }
     minDist = 9999;
-    this.rockets[firstPlaceRocket].color = color(100, 100, 255, 150);
+    this.rockets[firstPlaceRocket].color = color(0, 255, 0, 150);
     this.rockets[firstPlaceRocket].show();
     return this.maxfit;
   }
