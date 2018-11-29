@@ -50,7 +50,7 @@ function draw() {
     generation++;
     minDist = 9999;
     insertRow(generation, maxfit.toFixed(2));
-    life = templifespan;
+    lifespan = templifespan;
   }
 
   fill(255);
