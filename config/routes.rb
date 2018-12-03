@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :vimrcs
 
   resources :smart_rockets, only: :index
+  resources :cubewaves, only: :index
 end
