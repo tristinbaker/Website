@@ -1,6 +1,6 @@
 class VimCommandsController < ApplicationController
 
-  layout 'vim_command'
+  layout 'welcome'
 
   def index 
     @vim_types = VimType.all.exclude_non_commands

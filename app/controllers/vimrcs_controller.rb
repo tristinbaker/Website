@@ -1,6 +1,6 @@
 class VimrcsController < ApplicationController
 
-  layout 'vim_command'
+  layout 'welcome'
   
   before_action :set_vim_types
 
