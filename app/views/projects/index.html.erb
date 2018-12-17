@@ -4,11 +4,11 @@
       <div class="row">
         <div class="col-md-3">
           <div class="card">
-            <%= link_to image_tag(S3_BUCKET.object(project.image).presigned_url(:get, expires_in: 60 * 60 * 24), alt: "SmartRocket", style: "max-height: 64px; max-width: 64px;"), smart_rockets_path, class: "card-img-top" %>
+            <%= link_to image_tag(S3_BUCKET.object(project.image).presigned_url(:get, expires_in: 60 * 60 * 24), alt: "SmartRocket", style: "height: 256px; width: 256px;"), smart_rockets_path, class: "card-img-top" %>
             <div class="card-body">
               <h5 class="card-title"><%=project.name%></h5>
               <p class="card-text"><%=project.description%></p>
-              <%= link_to project.name, project.route, class: "btn btn-primary" %>
+              <%= link_to project.name, "#{project.route}", class: "btn btn-primary" %>
             </div>
           </div>
         </div>
