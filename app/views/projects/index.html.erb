@@ -1,11 +1,11 @@
-<div class="container-fluid">
+<div class="container">
   <% @projects.in_groups_of(3, false) do |projects| %>
     <div class="row">
       <div class="col-md-12">
         <% projects.each do |project| %> 
           <div class="col-md-3">
             <div class="card">
-              <%= link_to image_tag(S3_BUCKET.object(project.image).presigned_url(:get, expires_in: 60 * 60 * 24), alt: "SmartRocket", style: "height: 256px; width: 256px;"), smart_rockets_path, class: "card-img-top" %>
+              <%= link_to image_tag(S3_BUCKET.object(project.image).presigned_url(:get, expires_in: 60 * 60 * 24), alt: "SmartRocket", style: "height: 256px; width: 256px;"), smart_rockets_path, class: "card-img-top justify-content-center" %>
               <div class="card-body">
                 <h5 class="card-title"><%=project.name%></h5>
                 <p class="card-text"><%=project.description%></p>
