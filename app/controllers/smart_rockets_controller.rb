@@ -1,6 +1,6 @@
 class SmartRocketsController < ApplicationController
 
-  layout 'smart_rockets'
+  layout 'welcome'
 
   def index; end
 
