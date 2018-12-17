@@ -1,7 +1,8 @@
 <div class="background">
   <div class="container-fluid">
+    <br>
     <h4>
-    <%= link_to image_tag(S3_BUCKET.object('vim.png').presigned_url(:get, expires_in: 60 * 60 * 24), height: '100px', width: '100px') + ' Guide' %>
+    <%= link_to image_tag(S3_BUCKET.object('vim.png').presigned_url(:get, expires_in: 60 * 60 * 24), height: '64px', width: '64px') %>
     </h4>
     <br>
     <%= link_to '.vimrc Configuration', vimrcs_path, class: 'btn btn-secondary' %>
