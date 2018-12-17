@@ -2,7 +2,9 @@ class ProjectsController < ApplicationController
 
   layout 'welcome'
 
-  def index; end
+  def index
+    @projects = Project.all
+  end
 
   private
 
