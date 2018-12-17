@@ -6,7 +6,7 @@
         <div class="col">
           <div class="card">
             <div class="text-center">
-              <%= link_to image_tag(S3_BUCKET.object(project.image).presigned_url(:get, expires_in: 60 * 60 * 24), alt: "SmartRocket", style: "height: 256px; width: 256px;"), send(project.route), class: "card-img-top" %>
+              <%= link_to image_tag(S3_BUCKET.object(project.image).presigned_url(:get, expires_in: 60 * 60 * 24), alt: "SmartRocket", style: "height: 200px; width: 200px;"), send(project.route), class: "card-img-top" %>
             </div>
             <div class="card-body">
               <h5 class="card-title"><%=project.name%></h5>
