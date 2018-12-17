@@ -1,19 +1,20 @@
 <div class="container">
   <% @projects.in_groups_of(3, false) do |projects| %>
     <div class="row">
-        <% projects.each do |project| %> 
-          <div class="col">
-            <div class="card">
+      <% projects.each do |project| %> 
+        <div class="col">
+          <div class="card">
+            <div class="text-center">
               <%= link_to image_tag(S3_BUCKET.object(project.image).presigned_url(:get, expires_in: 60 * 60 * 24), alt: "SmartRocket", style: "height: 256px; width: 256px;"), smart_rockets_path, class: "card-img-top mx-auto d-block" %>
-              <div class="card-body">
-                <h5 class="card-title"><%=project.name%></h5>
-                <p class="card-text"><%=project.description%></p>
-                <%= link_to project.name, "#{project.route}", class: "btn btn-primary" %>
-              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><%=project.name%></h5>
+              <p class="card-text"><%=project.description%></p>
+              <%= link_to project.name, "#{project.route}", class: "btn btn-primary" %>
             </div>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>
