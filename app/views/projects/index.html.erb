@@ -10,7 +10,7 @@
             <div class="card-body">
               <h5 class="card-title"><%=project.name%></h5>
               <p class="card-text"><%=project.description%></p>
-              <%= link_to project.name, "#{project.route}", class: "btn btn-primary" %>
+              <%= link_to project.name, send(project.route), class: "btn btn-primary" %>
             </div>
           </div>
         </div>
