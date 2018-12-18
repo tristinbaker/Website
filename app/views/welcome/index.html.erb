@@ -2,18 +2,22 @@
   <div class="row">
     <div class="col-md-3">
       <div class="row">
-        <%= image_tag(S3_BUCKET.object('Tristin.jpg').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Tristin", class: 'img-fluid')%>
+        <div class="col-md-12">
+          <%= image_tag(S3_BUCKET.object('Tristin.jpg').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Tristin", class: 'img-fluid')%>
+        </div>
       </div>
       <div class="row">
-        <ul class="list-group">
-          <li class="list-group-item">
-            <a class="github-button" href="https://github.com/tristinbaker" data-size="large" aria-label="Follow @tristinbaker on GitHub">Follow @tristinbaker</a>
-          </li>
-          <li class="list-group-item">
-            <a href="https://twitter.com/tristinbaker_" class="twitter-follow-button" data-lang="en" data-show-count="false">Follow @tristinbaker_</a>
-          </li>
-          <li class="list-group-item"></li>
-        </ul>
+        <div class="col-md-12">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <a class="github-button" href="https://github.com/tristinbaker" data-size="large" aria-label="Follow @tristinbaker on GitHub">Follow @tristinbaker</a>
+            </li>
+            <li class="list-group-item">
+              <a href="https://twitter.com/tristinbaker_" class="twitter-follow-button" data-lang="en" data-show-count="false">Follow @tristinbaker_</a>
+            </li>
+            <li class="list-group-item"></li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="col-md-9">
