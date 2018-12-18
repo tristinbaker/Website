@@ -48,13 +48,13 @@
 
       <div class="row">
         <div class="col">
-          <%= image_tag(S3_BUCKET.object('renee.jpg').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Renee", class: 'img-fluid rounded-top', style: 'height: 300px; width: 300px; border: 1px solid #FFF')%>
+          <%= image_tag(S3_BUCKET.object('renee.jpg').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Renee", class: 'img-fluid rounded-top', style: 'max-height: 300px; max-width: 300px; border: 1px solid #FFF')%>
         </div>
         <div class="col">
-          <%= image_tag(S3_BUCKET.object('garrus.png').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Garrus", class: 'img-fluid rounded-top', style: 'height: 300px; width: 300px; border: 1px solid #FFF')%>
+          <%= image_tag(S3_BUCKET.object('garrus.png').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Garrus", class: 'img-fluid rounded-top', style: 'max-height: 300px; max-width: 300px; border: 1px solid #FFF')%>
         </div>
         <div class="col">
-          <%= image_tag(S3_BUCKET.object('tali.jpg').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Tali", class: 'img-fluid rounded-top', style: 'height: 300px; width: 300px; border: 1px solid #FFF')%>
+          <%= image_tag(S3_BUCKET.object('tali.jpg').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Tali", class: 'img-fluid rounded-top', style: 'max-height: 300px; max-width: 300px; border: 1px solid #FFF')%>
         </div>
       </div>
 
