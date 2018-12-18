@@ -1,11 +1,11 @@
-<div class="container" style="background: #707070;">
+<div class="container rounded bg-dark">
   <div class="row">
     <div class="col-md-3">
-      <%= image_tag(S3_BUCKET.object('Tristin.png').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Tristin", class: 'img-fluid')%>
+      <%= image_tag(S3_BUCKET.object('Tristin.jpg').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Tristin", class: 'img-fluid')%>
     </div>
     <div class="col-md-9">
       <h3> About Me </h3>
-      <p> 
+      <p class="text-light"> 
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat mattis massa. Quisque sed dui luctus, efficitur arcu quis, ultrices augue. Sed tincidunt elit et massa maximus, vel eleifend purus elementum. Vestibulum ac rutrum orci. Proin pulvinar, arcu eu varius lobortis, purus justo laoreet ex, lacinia pretium nunc diam quis mauris. Cras pulvinar pulvinar lacus in sollicitudin. Aliquam erat volutpat. Proin sit amet felis lectus. Mauris at gravida risus, at pulvinar sapien. Etiam commodo congue velit, ac vulputate enim ornare non. Proin sollicitudin ligula et lectus luctus, nec finibus lectus lobortis.
 
 Maecenas tellus mauris, condimentum sed augue nec, fringilla iaculis nisl. Fusce fermentum massa non ligula hendrerit eleifend. Nunc justo nisi, molestie sed vestibulum vitae, consectetur non ligula. Integer venenatis nec orci vitae sagittis. Nulla facilisi. In semper ex vel quam eleifend, ut vestibulum neque ultrices. Proin varius vitae erat id iaculis.
