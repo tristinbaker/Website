@@ -11,7 +11,7 @@
     <%= favicon_link_tag S3_BUCKET.object('glasses.ico').presigned_url(:get, expires_in: 60 * 60 * 24) %>
     <title> Tristin's Website </title>
   </head>
-  <body>
+  <body style='padding-top: 65px'>
     <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-top">
       <%= link_to 'Tristin Baker', root_path, class: "navbar-brand"%>
       <div class="collapse navbar-collapse">
