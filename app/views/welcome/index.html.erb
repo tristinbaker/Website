@@ -1,55 +1,66 @@
-<div class="container rounded-bottom bg-dark" style="height: 100vh;">
+<div class="container bg-dark" style="height: 100vh;">
   <div class="row">
     <div class="col-md-3">
       <div class="row">
         <div class="col-md-12">
-          <%= image_tag(S3_BUCKET.object('Tristin.jpg').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Tristin", class: 'img-fluid rounded-top')%>
+          <%= image_tag(S3_BUCKET.object('Tristin.jpg').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Tristin", class: 'img-fluid rounded-top', style: 'border: 1px solid #FFF')%>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
-          <ul class="list-group text-center">
+          <ul class="list-group text-center rounded-bottom">
             <li class="list-group-item">
-              <%= link_to "", "https://twitter.com/tristinbaker_", class: 'fab fa-twitter fa-lg', style: 'padding: 1vh; width: 100%; background: #1da1f2; color: white;' %>
+              <%= link_to "", "https://twitter.com/tristinbaker_", class: 'fab fa-twitter fa-lg', style: 'padding: 1vh; width: 100%; background: #1da1f2; color: white; text-decoration: none;' %>
             </li>
             <li class="list-group-item">
-              <%= link_to "", "https://github.com/tristinbaker", class: 'fab fa-github fa-lg', style: 'padding: 1vh; width: 100%; background: #303033; color: white;' %>
+              <%= link_to "", "https://github.com/tristinbaker", class: 'fab fa-github fa-lg', style: 'padding: 1vh; width: 100%; background: #303033; color: white; text-decoration: none;' %>
             </li>
             <li class="list-group-item">
-              <%= link_to "", "https://www.linkedin.com/in/tristinbaker/", class: 'fab fa-linkedin fa-lg', style: 'padding: 1vh; width: 100%; background: #0077b5; color: white;' %>
+              <%= link_to "", "https://www.linkedin.com/in/tristinbaker/", class: 'fab fa-linkedin fa-lg', style: 'padding: 1vh; width: 100%; background: #0077b5; color: white; text-decoration: none;' %>
             </li>
             <li class="list-group-item">
-              <%= link_to "", "https://www.twitch.tv/the_suqei", class: 'fab fa-twitch fa-lg', style: 'padding: 1vh; width: 100%; background: #6441a5; color: white;' %>
+              <%= link_to "", "https://www.twitch.tv/the_suqei", class: 'fab fa-twitch fa-lg', style: 'padding: 1vh; width: 100%; background: #6441a5; color: white; text-decoration: none;' %>
             </li>
             <li class="list-group-item">
-              <%= link_to "", "https://www.last.fm/user/Suqei", class: 'fab fa-lastfm fa-lg', style: 'padding: 1vh; width: 100%; background: #d51007; color: white;' %>
+              <%= link_to "", "https://www.last.fm/user/Suqei", class: 'fab fa-lastfm fa-lg', style: 'padding: 1vh; width: 100%; background: #d51007; color: white; text-decoration: none;' %>
             </li>
           </ul>
         </div>
       </div>
     </div>
     <div class="col-md-9">
-      <h3 class="text-light"> About Me </h3>
+      <h3 class="text-light"> A Little About Me, Professionally </h3>
       <hr>
       <p class="text-light"> 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat mattis massa. Quisque sed dui luctus, efficitur arcu quis, ultrices augue. Sed tincidunt elit et massa maximus, vel eleifend purus elementum. Vestibulum ac rutrum orci. Proin pulvinar, arcu eu varius lobortis, purus justo laoreet ex, lacinia pretium nunc diam quis mauris. Cras pulvinar pulvinar lacus in sollicitudin. Aliquam erat volutpat. Proin sit amet felis lectus. Mauris at gravida risus, at pulvinar sapien. Etiam commodo congue velit, ac vulputate enim ornare non. Proin sollicitudin ligula et lectus luctus, nec finibus lectus lobortis.
+        Hello! My name is Tristin Baker and I am a Ruby on Rails developer at Amazon in Chattanooga, Tennessee. I have been at this position since May 2018, just one week after I graduated. In this position, I develop web apps and tools that help the managers and other associates complete their job in a more efficient and stressfree manner. </p>
+      <p>
+        In addition to this position, I have extensive experience in C++, Java, and C. I had an internship in college with the Joint Institute for Computational Science, in which I worked on the OpenDIEL, a framework which facilitates data transfer between multiple serial software running in parallel. This internship was completed in the summer of 2017.
       </p>
 
-      <p class="text-light"> 
-      Maecenas tellus mauris, condimentum sed augue nec, fringilla iaculis nisl. Fusce fermentum massa non ligula hendrerit eleifend. Nunc justo nisi, molestie sed vestibulum vitae, consectetur non ligula. Integer venenatis nec orci vitae sagittis. Nulla facilisi. In semper ex vel quam eleifend, ut vestibulum neque ultrices. Proin varius vitae erat id iaculis.
+      <p> I attended Maryville College from 2014 to 2018, where I graduated with a B.A. in Computer Science. This college turned a bored, unmotivated student into an excited learner, something I never thought would happen, but am glad it did. Here I learned all about everything from how operating systems work on a very low level to high level programming like Java. I even made a <a href="https://github.com/tristinbaker/Rollin" style="text-decoration: none">game!</a>, which I am very proud of (even if it looks awful!).
       </p>
 
+      <h3 class="text-light"> Getting To Know The Real Me </h3>
       <p class="text-light"> 
-      Etiam non nisl est. Nunc scelerisque ultricies lectus, et eleifend nibh tincidunt nec. Donec a magna imperdiet, tempus diam eget, rhoncus arcu. Curabitur quis viverra leo, sed sodales dui. Nam varius nisi ac nulla sodales iaculis. Integer aliquet egestas orci, in suscipit ipsum aliquet vehicula. Integer tempor metus a orci eleifend volutpat. Mauris eget sapien a risus hendrerit laoreet ut vel magna. Proin leo magna, vehicula quis felis a, gravida bibendum felis. Aliquam sed arcu ac felis finibus semper nec quis dolor. Proin non erat tincidunt, feugiat ligula non, cursus mauris. Quisque sodales sagittis nisl, sit amet gravida nisl pellentesque eu.
+        In my spare time, I spend a lot of time playing video games (DOS-era RPGs are some of my favorites, but I can still get down with some Skyrim), listening to music (anything from Hank Williams, Jr. to Lil Pump), and hanging out with my fiancée and my dogs. Some of my all time favorite games are Might and Magic IV-V: World of Xeen, Super Mario World, Legend of Zelda: Ocarina of Time, and the entire Kingdom Hearts series. Some of my favorite music artists include Tame Impala, Pink Floyd (older stuff), Shpongle, and The Reign of Kindo. I tend to find a band that I love and just binge them until I am sick of them, though. I know, bad habit. Don't care!
       </p>
 
-      <p class="text-light"> 
-      Etiam semper est quis magna finibus, in fermentum justo pretium. Aliquam augue dui, mattis sit amet lacus ut, pellentesque ultrices ex. Nulla vel quam nec lectus posuere feugiat in eu elit. Vivamus ac laoreet tellus. Quisque iaculis ut metus vestibulum volutpat. Phasellus tortor mi, scelerisque sed felis ut, euismod ornare arcu. Integer risus ipsum, laoreet nec aliquam eget, pharetra et dolor. Nam interdum rutrum nisi commodo elementum. Proin est odio, posuere vitae rhoncus ac, rutrum interdum diam.
-      </p>
+      <div class="row">
+        <div class="col">
+          <%= image_tag(S3_BUCKET.object('Tristin.jpg').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Tristin", class: 'img-fluid rounded-top', style: 'border: 1px solid #FFF')%>
+        </div>
+        <div class="col">
+          <%= image_tag(S3_BUCKET.object('Tristin.jpg').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Tristin", class: 'img-fluid rounded-top', style: 'border: 1px solid #FFF')%>
+        </div>
+        <div class="col">
+          <%= image_tag(S3_BUCKET.object('Tristin.jpg').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Tristin", class: 'img-fluid rounded-top', style: 'border: 1px solid #FFF')%>
+        </div>
+      </div>
 
       <p class="text-light"> 
-      Duis vitae maximus erat. Sed ornare tempor urna, vitae maximus neque finibus et. Etiam mollis sem tortor, non laoreet neque bibendum ac. Nullam vehicula ornare eros, at aliquet libero pulvinar a. Fusce egestas lacus id justo egestas fringilla. Quisque facilisis eros orci, a pretium ante mattis at. Sed quis rhoncus leo. Cras ut lectus molestie, ullamcorper turpis in, efficitur quam.
+        Please reach out to me if you're interested in learning anything else about me. You can find me at my Twitter, or at my email tristinbaker52@gmail.com. I look forward to hearing from you!
       </p>
+
     </div>
   </div>
 </div>
