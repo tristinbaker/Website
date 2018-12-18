@@ -28,10 +28,10 @@
         </div>
       </div>
     </div>
-    <div class="col-md-9">
-      <h3 class="text-light"> A Little About Me, Professionally </h3>
+    <div class="col-md-9 text-light">
+      <h3> A Little About Me, Professionally </h3>
       <hr>
-      <p class="text-light"> 
+      <p> 
         Hello! My name is Tristin Baker and I am a Ruby on Rails developer at Amazon in Chattanooga, Tennessee. I have been at this position since May 2018, just one week after I graduated. In this position, I develop web apps and tools that help the managers and other associates complete their job in a more efficient and stressfree manner. </p>
       <p>
         In addition to this position, I have extensive experience in C++, Java, and C. I had an internship in college with the Joint Institute for Computational Science, in which I worked on the OpenDIEL, a framework which facilitates data transfer between multiple serial software running in parallel. This internship was completed in the summer of 2017.
@@ -40,24 +40,26 @@
       <p> I attended Maryville College from 2014 to 2018, where I graduated with a B.A. in Computer Science. This college turned a bored, unmotivated student into an excited learner, something I never thought would happen, but am glad it did. Here I learned all about everything from how operating systems work on a very low level to high level programming like Java. I even made a <a href="https://github.com/tristinbaker/Rollin" style="text-decoration: none">game!</a>, which I am very proud of (even if it looks awful!).
       </p>
 
-      <h3 class="text-light"> Getting To Know The Real Me </h3>
-      <p class="text-light"> 
+      <hr>
+
+      <h3> Getting To Know The Real Me </h3>
+      <p> 
         In my spare time, I spend a lot of time playing video games (DOS-era RPGs are some of my favorites, but I can still get down with some Skyrim), listening to music (anything from Hank Williams, Jr. to Lil Pump), and hanging out with my fiancée and my dogs. Some of my all time favorite games are Might and Magic IV-V: World of Xeen, Super Mario World, Legend of Zelda: Ocarina of Time, and the entire Kingdom Hearts series. Some of my favorite music artists include Tame Impala, Pink Floyd (older stuff), Shpongle, and The Reign of Kindo. I tend to find a band that I love and just binge them until I am sick of them, though. I know, bad habit. Don't care!
       </p>
 
       <div class="row">
         <div class="col">
-          <%= image_tag(S3_BUCKET.object('Tristin.jpg').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Tristin", class: 'img-fluid rounded-top', style: 'border: 1px solid #FFF')%>
+          <%= image_tag(S3_BUCKET.object('renee.jpg').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Renee", class: 'img-fluid rounded-top', style: 'border: 1px solid #FFF')%>
         </div>
         <div class="col">
-          <%= image_tag(S3_BUCKET.object('Tristin.jpg').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Tristin", class: 'img-fluid rounded-top', style: 'border: 1px solid #FFF')%>
+          <%= image_tag(S3_BUCKET.object('garrus.png').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Garrus", class: 'img-fluid rounded-top', style: 'border: 1px solid #FFF')%>
         </div>
         <div class="col">
-          <%= image_tag(S3_BUCKET.object('Tristin.jpg').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Tristin", class: 'img-fluid rounded-top', style: 'border: 1px solid #FFF')%>
+          <%= image_tag(S3_BUCKET.object('tali.jpg').presigned_url(:get, expires_in: 60 * 60 * 24), alt: "Tali", class: 'img-fluid rounded-top', style: 'border: 1px solid #FFF')%>
         </div>
       </div>
 
-      <p class="text-light"> 
+      <p> 
         Please reach out to me if you're interested in learning anything else about me. You can find me at my Twitter, or at my email tristinbaker52@gmail.com. I look forward to hearing from you!
       </p>
 
