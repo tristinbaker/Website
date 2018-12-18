@@ -1,6 +1,6 @@
 class CubewavesController < ApplicationController
 
-  layout 'welcome'
+  layout 'cubewave'
 
   def index; end
 
