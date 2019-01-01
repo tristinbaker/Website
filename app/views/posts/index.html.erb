@@ -4,7 +4,7 @@
       <div class="col-md-1 offset-md-3">
         <%= link_to image_tag(S3_BUCKET.object(post.image).presigned_url(:get, expires_in: 60 * 60 * 24), height: '200px', width: '200px') %>
       </div>
-      <div class="col-md-11">
+      <div class="col-md-7">
         <div class="post_wrapper">
           <h2 class="title"><%= link_to post.title, post %></h2>
           <p class="date"><%= post.created_at.strftime("%B, %d, %Y") %> </p>
