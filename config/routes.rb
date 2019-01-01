@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :smart_rockets, only: [:index]
   resources :cubewaves, only: [:index]
 
-  resources :posts
+  resources :posts do 
+    resources :comments
+  end
 
   resources :projects, only: [:index]
 end
