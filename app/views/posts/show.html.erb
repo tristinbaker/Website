@@ -1,12 +1,16 @@
-<h1 class="title">
-  <%= link_to image_tag(S3_BUCKET.object(@post.image).presigned_url(:get, expires_in: 60 * 60 * 24), height: '150px', width: '150px') %>
-  <%= @post.title %>
-</h1>
+<div class="container-fluid">
+  <h1 class="title">
+    <%= link_to image_tag(S3_BUCKET.object(@post.image).presigned_url(:get, expires_in: 60 * 60 * 24), height: '150px', width: '150px') %>
+    <%= @post.title %>
+  </h1>
 
-<p class="date">
+  <small class="text-muted">
   Submitted <%= time_ago_in_words(@post.created_at) %> Ago
-</p>
+  </small>
 
-<p class="content">
- <%= @post.content %>
-</p>
+  <hr>
+
+  <p class="content">
+  <%= @post.content %>
+  </p>
+</div>
