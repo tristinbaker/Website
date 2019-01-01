@@ -10,10 +10,6 @@
         Submitted <%= time_ago_in_words(@post.created_at.in_time_zone('US/Eastern')) %> ago.
       </small>
 
-      <small class="text-muted">
-        Viewed <%= @post.hits %> times.
-      </small>
-
       <hr>
 
       <p class="content">
