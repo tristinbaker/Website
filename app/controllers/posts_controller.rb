@@ -4,11 +4,18 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def show; end
+  def show
+    @post = Post.find(params[:id])
+  end
 
   def new; end
 
-  def create; end
+  def create
+    @post = Post.new(post_params)
+    @post.save
+
+    redirect_to @post
+  end
 
   def edit; end
 
@@ -17,5 +24,9 @@ class PostsController < ApplicationController
   def destroy; end
 
   private
+
+  def post_params
+    params.require(:post).permit(:title, :content, :tags)
+  end
 
 end
