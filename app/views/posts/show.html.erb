@@ -2,12 +2,12 @@
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <h1 class="title">
-        <%= link_to image_tag(S3_BUCKET.object(@post.image).presigned_url(:get, expires_in: 60 * 60 * 24), height: '150px', width: '150px') %>
+        <%= image_tag(S3_BUCKET.object(@post.image).presigned_url(:get, expires_in: 60 * 60 * 24), height: '150px', width: '150px') %>
         <%= @post.title %>
       </h1>
 
       <small class="text-muted">
-        Submitted <%= time_ago_in_words(@post.created_at.in_time_zone('EST')) %> Ago
+        Submitted <%= time_ago_in_words(@post.created_at.in_time_zone('US/Eastern')) %> ago.
       </small>
 
       <hr>
