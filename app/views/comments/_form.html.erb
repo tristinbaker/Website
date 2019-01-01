@@ -1,18 +1,22 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
-  <p>
+  <div class="form-group">
+    <p class="form-control">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
-  </p>
+    </p>
+  </div>
 
-  <p>
+  <div class="form-group">
+    <p class="form-control">
     <%= f.label :content %><br>
     <%= f.text_area :content %>
-  </p>
+    </p>
+  </div>
 
   <br>
 
   <p>
-    <%= f.submit %>
+  <%= f.submit, class: 'btn btn-secondary' %>
   </p>
 
 <% end %>
