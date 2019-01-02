@@ -14,6 +14,10 @@
 
   - This is a 3D demonstration of a cube waving using p5.js and WebGL.
   
+* Blog
+  
+  - This is where I write reviews or whatever else I feel like writing.
+  
 ## Projects I Am Working On
 
 * CHIP8 Emulator
