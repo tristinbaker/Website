@@ -2,7 +2,7 @@
   <div class="container-fluid" style="margin-top: 5px;">
     <div class="row">
       <div class="col-md-2 offset-md-3">
-        <%= link_to image_tag(S3_BUCKET.object(post.image).presigned_url(:get, expires_in: 60 * 60 * 24), height: '100vh', width: '100vw') %>
+        <%= link_to image_tag(S3_BUCKET.object(post.image).presigned_url(:get, expires_in: 60 * 60 * 24), height: '200vh', width: '200vw') %>
       </div>
       <div class="col-md-7">
         <div class="post_wrapper">
